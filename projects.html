@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akash Deep | Projects</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav>
+    <div class="nav-inner">
+      <!-- Hamburger button (mobile only) -->
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      
+      <!-- Navigation links -->
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">About</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= PROJECTS SECTION ================= -->
+  <main id="projects">
+    <h1 class="projects-title">My Projects</h1>
+   <p class="projects-subtitle">
+  A selection of my projects that demonstrate my technical skills, creativity, and problem-solving approach.
+</p>
+
+    <!-- Grid container for project cards -->
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <h2>📱 SMS Spam Classification</h2>
+        <p>Machine Learning model to classify spam vs ham messages with 95% accuracy.</p>
+        <p><strong>Tech:</strong> Python, Scikit-learn, Flask</p>
+        <div class="project-links">
+          <a href="https://github.com/ad8034/sms-spam-classifier" target="_blank">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <h2>🩺 Lymphography Disease Prediction</h2>
+        <p>Web app using ML algorithms (KNN, Decision Tree, Random Forest) for medical prediction.</p>
+        <p><strong>Tech:</strong> Python, Flask, ML</p>
+        <div class="project-links">
+          <a href="https://github.com/ad8034/lymphography-prediction" target="_blank">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <h2>🌐 Portfolio Website</h2>
+        <p>Personal portfolio website to showcase my work and resume.</p>
+        <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+        <div class="project-links">
+          <a href="https://github.com/ad8034/portfolio" target="_blank">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <p>Made with ❤️ by Akash Deep</p>
+    <p>&copy; 2025 Akash Deep. All Rights Reserved.</p>
+  </footer>
+
+  <!-- ================= NAVBAR TOGGLE SCRIPT ================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+
+      if (menuToggle && navLinks) {
+        // Toggle nav menu on hamburger click
+        menuToggle.addEventListener('click', () => {
+          const isOpen = navLinks.classList.toggle('show');
+          menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        // Close nav when clicking a link
+        navLinks.querySelectorAll('a').forEach(a => {
+          a.addEventListener('click', () => {
+            navLinks.classList.remove('show');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+
+        // Close nav when clicking outside
+        document.addEventListener('click', (e) => {
+          if (navLinks.classList.contains('show') &&
+              !navLinks.contains(e.target) &&
+              e.target !== menuToggle) {
+            navLinks.classList.remove('show');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

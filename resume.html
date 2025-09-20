@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akash Deep | Resume</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar (same as other pages) -->
+  <nav>
+    <div class="nav-inner">
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <div class="nav-links" id="nav-links" role="navigation" aria-label="Main Navigation">
+        <a href="index.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html" aria-current="page">Resume</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Resume Section -->
+ <main id="resume">
+  <!-- Header -->
+  <section class="resume-header">
+  <h1>Akash Deep Kumar</h1>
+  <p class="resume-tagline"><span>🎬 Video Resume</span></p>
+</section>
+
+  <!-- Video Resume -->
+  <section class="resume-video-section">
+    <div class="video-box">
+      <video id="resume-video" preload="metadata">
+        <source src="assets/video_resume.mp4" type="video/mp4">
+      </video>
+      <div class="play-overlay" id="play-overlay">▶</div>
+    </div>
+  </section>
+
+  
+
+  
+
+  <!-- Download Section -->
+  <section class="resume-download">
+    <a href="assets/resume.pdf" class="btn" download>⬇ Download Resume (PDF)</a>
+    <a href="assets/resume.pdf" target="_blank" class="btn secondary">📑 Open Resume (PDF)</a>
+  </section>
+</main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with ❤️ by Akash Deep</p>
+    <p>&copy; 2025 Akash Deep. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+      const video = document.getElementById('resume-video');
+      const playOverlay = document.getElementById('play-overlay');
+
+      // Navbar toggle
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+          const isOpen = navLinks.classList.toggle('show');
+          menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+        navLinks.querySelectorAll('a').forEach(a => {
+          a.addEventListener('click', () => {
+            navLinks.classList.remove('show');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+        document.addEventListener('click', (e) => {
+          if (navLinks.classList.contains('show') &&
+              !navLinks.contains(e.target) &&
+              e.target !== menuToggle) {
+            navLinks.classList.remove('show');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+
+      // Video play/pause with overlay
+      video.controls = false;
+      video.addEventListener('click', () => {
+        if (video.paused) {
+          video.play();
+          playOverlay.style.display = "none";
+        } else {
+          video.pause();
+          playOverlay.style.display = "flex";
+        }
+      });
+      video.addEventListener('ended', () => {
+        playOverlay.style.display = "flex";
+      });
+    });
+  </script>
+
+</body>
+</html>
