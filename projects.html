@@ -31,53 +31,82 @@
     <h1 class="projects-title">My Projects</h1>
    <p class="projects-subtitle">
   A selection of my projects that demonstrate my technical skills, creativity, and problem-solving approach.
-</p>
+  </p>
 
-    <!-- Grid container for project cards -->
-    <div class="projects-grid">
+      <!-- Grid container for project cards -->
+      <div class="projects-grid">
 
-      <!-- Project 1 -->
-      <div class="project-card">
-        <h2>📱 SMS Spam Classification</h2>
-        <p>Machine Learning model to classify spam vs ham messages with 95% accuracy.</p>
-        <p><strong>Tech:</strong> Python, Scikit-learn, Flask</p>
-        <div class="project-links">
-          <a href="https://github.com/ad8034/sms-spam-classifier" target="_blank">
-            <i class="fa-brands fa-github"></i> GitHub
-          </a>
-        </div>
-      </div>
+        <div class="projects-grid">
 
-      <!-- Project 2 -->
-      <div class="project-card">
-        <h2>🩺 Lymphography Disease Prediction</h2>
-        <p>Web app using ML algorithms (KNN, Decision Tree, Random Forest) for medical prediction.</p>
-        <p><strong>Tech:</strong> Python, Flask, ML</p>
-        <div class="project-links">
-          <a href="https://github.com/ad8034/lymphography-prediction" target="_blank">
-            <i class="fa-brands fa-github"></i> GitHub
-          </a>
-        </div>
-      </div>
+    <!-- Project 1: Lymphography -->
+    <div class="project-card highlight">
+      <h2>🩺 Lymphography Disease Prediction (Explainable AI)</h2>
 
-      <!-- Project 3 -->
-      <div class="project-card">
-        <h2>🌐 Portfolio Website</h2>
-        <p>Personal portfolio website to showcase my work and resume.</p>
-        <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-        <div class="project-links">
-          <a href="https://github.com/ad8034/portfolio" target="_blank">
-            <i class="fa-brands fa-github"></i> GitHub
-          </a>
-        </div>
+      <p>
+        <b>Problem:</b> Medical diagnosis using lymphography data is complex
+        and traditional ML models lack interpretability.
+      </p>
+
+      <p>
+        <b>Solution:</b> Developed and evaluated multiple classification models
+        (KNN, Decision Tree, Random Forest) and applied
+        <b>SHAP (Explainable AI)</b> to interpret feature importance.
+      </p>
+
+      <p>
+        <b>Impact:</b> Improved transparency and trust in medical predictions,
+        making the system suitable for research and academic use.
+      </p>
+
+      <p>
+        <strong>Tech Stack:</strong> Python, Scikit-learn, SHAP
+      </p>
+
+      <div class="project-links">
+        <a href="https://github.com/ad8034/Lymphography-XAI-Project" target="_blank">
+        GitHub Repository
+        </a>
       </div>
     </div>
+
+    <!-- Project 2: Daily Sugar Guidance App -->
+    <div class="project-card">
+      <h2>🩸 Daily Sugar Guidance Web Application</h2>
+
+      <p>
+        <b>Problem:</b> People with diabetes often struggle to understand
+        daily blood sugar readings and required lifestyle actions.
+      </p>
+
+      <p>
+        <b>Solution:</b> Built and deployed a Streamlit-based web application
+        that provides daily diet and walking guidance based on blood sugar values,
+        including safe input validation and emergency handling.
+      </p>
+
+      <p>
+        <b>Impact:</b> Created an accessible and easy-to-use tool suitable
+        for both literate and low-literacy users.
+      </p>
+
+      <p>
+        <strong>Tech Stack:</strong> Python, Streamlit, GitHub, Streamlit Cloud
+      </p>
+
+      <div class="project-links">
+        <a href="https://trackdiabities.streamlit.app" target="_blank">
+          Live Application
+        </a>
+      </div>
+    </div>
+
+  </div>
+
   </main>
 
   <!-- ================= FOOTER ================= -->
   <footer>
-    <p>Made with ❤️ by Akash Deep</p>
-    <p>&copy; 2025 Akash Deep. All Rights Reserved.</p>
+    <p>Built with HTML, CSS & JavaScript | © 2025 Akash Deep</p>
   </footer>
 
   <!-- ================= NAVBAR TOGGLE SCRIPT ================= -->

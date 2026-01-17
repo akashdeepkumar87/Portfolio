@@ -105,6 +105,17 @@ nav {
 .profile-pic img:hover {
   transform: scale(1.08) rotate(2deg);
 }
+.availability {
+  margin-top: 15px;
+  font-size: 15px;
+  color: #333;
+  background: #fff6d6;
+  padding: 10px 14px;
+  border-left: 4px solid #ffd700;
+  border-radius: 6px;
+  max-width: 520px;
+}
+
 
 /* Intro Text */
 .intro {
@@ -692,4 +703,97 @@ Hover effect on links
   color: #111;           /* almost black */
   font-weight: 600;      /* medium-bold */
   letter-spacing: 0.5px; /* slight spacing for clarity */
+}
+
+.role {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #0078d7;
+}
+/* ========================= ABOUT / HOME ========================= */
+/* Skills Section */
+.skills-section {
+  margin-top: 30px;
+}
+
+.skills-title {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #0078d7;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills-list span {
+  background: #e6f2ff;
+  color: #0078d7;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.skills-list span:hover {
+  background: #0078d7;
+  color: white;
+  transform: translateY(-2px);
+}
+/*  THIS FOR CONTACT PAGE */
+.contact-note {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+}
+/* =========================
+   CONTACT PAGE - MOBILE FIX
+========================= */
+@media (max-width: 768px) {
+
+  #contact {
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+
+  .contact-title {
+    font-size: 26px;
+  }
+
+  .contact-subtitle,
+  .contact-note {
+    font-size: 15px;
+  }
+
+  .contact-card {
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%;
+    min-width: unset;
+    text-align: center;
+  }
+
+  .contact-info p {
+    font-size: 15px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .contact-form button {
+    width: 100%;
+    padding: 12px;
+  }
 }
