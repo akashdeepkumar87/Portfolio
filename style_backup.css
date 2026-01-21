@@ -1,0 +1,799 @@
+/* General Styling */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(to bottom right, #a1c4fd, #c2e9fb);
+  color: #333;
+}
+/* Navbar - minimal visual change on desktop, hamburger for mobile */
+nav {
+  background: #0078d7; /* same solid color as before */
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; /* keeps links centered on desktop like your original */
+  align-items: center;
+  gap: 20px;
+}
+
+/* Hidden on desktop, visible on mobile */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Desktop inline links (same style as before) */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: #ffd700; }
+
+/* Mobile behaviour: hamburger shows, links become an overlay with frosted glass */
+@media (max-width: 768px) {
+  .nav-inner {
+    justify-content: flex-end; /* push hamburger to the right */
+    padding: 0 16px;
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto; /* aligns it to the right */
+  }
+
+  .nav-links {
+    display: none; /* hidden until toggled */
+    position: absolute;
+    top: 60px;
+    right: 16px;   /* dropdown appears under the hamburger on the right */
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+
+    background: rgba(0,120,215,0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
+/* About Section */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 50px;
+  padding: 80px 40px;
+}
+
+.profile-pic {
+  margin-left: 60px;
+}
+.profile-pic img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top; /* keep top of head visible */
+  border: 5px solid #0078d7;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+.profile-pic img:hover {
+  transform: scale(1.08) rotate(2deg);
+}
+.availability {
+  margin-top: 15px;
+  font-size: 15px;
+  color: #333;
+  background: #fff6d6;
+  padding: 10px 14px;
+  border-left: 4px solid #ffd700;
+  border-radius: 6px;
+  max-width: 520px;
+}
+
+
+/* Intro Text */
+.intro {
+  max-width: 700px;
+  text-align: left;
+}
+.intro h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+.intro h2 span {
+  color: #ffd700;
+}
+.intro p {
+  line-height: 1.7;
+  margin-bottom: 15px;
+  font-size: 17px;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #0078d7;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn:hover {
+  background: #ffd700;
+  color: black;
+  transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #0078d7;
+  color: white;
+  margin-top: 40px;
+}
+
+/* Projects Section */
+#projects {
+  padding: 60px 20px;
+  text-align: center;
+}
+#projects h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: #0078d7;
+}
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  padding: 20px;
+  width: 300px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card h3 {
+  margin-top: 0;
+  color: #333;
+}
+.project-card p {
+  font-size: 14px;
+  margin: 8px 0;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* Tagline + Background Decoration */
+#about {
+  position: relative;
+  background-image: url("robot.png");
+  background-repeat: no-repeat;
+  background-position: right 40px center;
+  background-size: 350px;
+}
+#about::after {
+  content: "";
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(0,120,215,0.15), transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+}
+.tagline {
+  position: absolute;
+  right: 80px;
+  bottom: 120px;
+  max-width: 300px;
+  text-align: right;
+}
+.tagline h3 {
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 600;
+  color: #0078d7;
+  text-shadow: 0 0 8px rgba(0,120,215,0.3);
+}
+
+/* ----------------------------- */
+/* Responsive Design */
+/* ----------------------------- */
+@media (max-width: 1024px) {
+  .about-container {
+    gap: 30px;
+    padding: 60px 20px;
+  }
+
+  .profile-pic {
+    margin-left: 0;
+  }
+
+  .tagline {
+    right: 40px;
+    bottom: 80px;
+    max-width: 240px;
+    font-size: 18px;
+  }
+
+  #about {
+    background-size: 250px;
+    background-position: right 20px center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+    padding: 50px 20px;
+  }
+
+  .intro {
+    text-align: center;
+  }
+
+  .tagline {
+    position: static;
+    margin-top: 20px;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  #about {
+    background: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-pic img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .intro h2 {
+    font-size: 22px;
+  }
+
+  .intro p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 14px;
+    padding: 15px;
+  }
+}
+
+/* Resume Page Layout */
+#resume {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.resume-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.resume-header h1 {
+  font-size: 32px;
+  color: #0078d7;
+}
+.resume-tagline {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #444;
+}
+.resume-links a {
+  margin: 0 10px;
+  color: #0078d7;
+  font-weight: bold;
+  text-decoration: none;
+}
+.resume-links a:hover { color: #ffd700; }
+
+/* Video Section */
+.resume-video-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.video-box {
+  position: relative;
+  width: 360px;
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+.video-box video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+}
+.play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+/* Highlights Section */
+.resume-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.highlight-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+}
+
+/* Projects */
+.resume-projects {
+  margin-bottom: 40px;
+}
+.resume-projects h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0078d7;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.project {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Download */
+.resume-download {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.resume-download .btn {
+  margin: 5px;
+}
+/* ---------------------------
+   VIDEO RESUME HEADER STYLING
+   Use this to make "Video Resume"
+   look like a professional badge.
+   🎬 Blue border + background + subtle animation
+   --------------------------- */
+/* VIDEO RESUME HEADER - Gradient Badge Style */
+.resume-tagline span {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  /* Gradient text */
+  background: linear-gradient(45deg, #0078d7, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Fancy underline */
+  position: relative;
+}
+.resume-tagline span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, #0078d7, #00c6ff);
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(0, 120, 215, 0.6);
+}
+
+/* Smooth entry animation */
+.resume-tagline {
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===========================
+   CONTACT PAGE STYLING
+   =========================== */
+
+/* ===== Main contact section wrapper ===== */
+#contact {
+  max-width: 1000px;         /* limit section width for readability */
+  margin: 60px auto;         /* center the section */
+  padding: 0 20px;           /* side spacing */
+  text-align: center;        /* center align text */
+}
+
+/* ===== Title (Get In Touch) ===== */
+.contact-title {
+  font-size: 32px;
+  color: #0078d7;            /* brand blue */
+  margin-bottom: 10px;
+}
+
+/* ===== Subtitle (small tagline under title) ===== */
+.contact-subtitle {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #444;               /* dark gray text */
+}
+
+/* ===== Flex container: holds contact info & form side by side ===== */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;           /* stack items on small screens */
+  justify-content: center;   /* center horizontally */
+  gap: 40px;                 /* space between items */
+  align-items: flex-start;   /* align to top */
+}
+
+/* ===== LEFT: Contact information block ===== */
+.contact-info {
+  text-align: left;
+  font-size: 16px;
+}
+.contact-info p {
+  margin: 10px 0;
+}
+.contact-info a {
+  color: #0078d7;            /* link blue */
+  text-decoration: none;
+  font-weight: bold;
+}
+.contact-info a:hover {
+  color: #ffd700;            /* gold hover effect */
+}
+
+/* ===== RIGHT: Contact form ===== */
+.contact-form {
+  display: flex;
+  flex-direction: column;    /* stack input fields vertically */
+  gap: 15px;                 /* space between inputs */
+  width: 320px;              /* fixed form width */
+}
+
+/* Input & textarea styling */
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 2px solid #ccc;    /* light gray border */
+  border-radius: 8px;        /* rounded corners */
+  font-size: 15px;
+  font-family: inherit;      /* match site font */
+  transition: border 0.3s;   /* smooth border change */
+}
+
+/* Highlight input on focus */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #0078d7;     /* blue border on focus */
+  outline: none;             /* remove default outline */
+}
+
+/* Submit button (inherits global .btn style) */
+.contact-form button {
+  align-self: center;        /* center button */
+}
+
+/* ===== Responsive Design (Mobile <768px) ===== */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;  /* stack info + form */
+    text-align: center;
+  }
+  .contact-info {
+    text-align: center;      /* center contact info */
+  }
+}
+/* the change which i done later */
+/* Contact Card Layout */
+.contact-card {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 40px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  flex-wrap: wrap; /* stack on mobile */
+}
+
+/* Left Side: Info */
+.contact-info {
+  flex: 1;
+  min-width: 260px;
+}
+.contact-info h2 {
+  margin-bottom: 15px;
+  color: #0078d7;
+}
+.contact-info p {
+  margin: 12px 0;
+  font-size: 16px;
+}
+.contact-info i {
+  color: #0078d7;
+  margin-right: 8px;
+}
+
+/* Right Side: Form */
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-form h2 {
+  margin-bottom: 10px;
+  color: #0078d7;
+}
+/* ================= PROJECTS PAGE ================= */
+
+/* Container for projects page */
+#projects {
+  max-width: 1000px;       /* Limit width for readability */
+  margin: 60px auto;       /* Center content with spacing */
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* Main title */
+.projects-title {
+  font-size: 32px;
+  color: #0078d7;
+  margin-bottom: 10px;
+}
+
+/* Subtitle below title */
+.projects-subtitle {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #444;
+}
+
+/* Grid layout for project cards */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* Each project card */
+.project-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect on project card */
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Project title inside card */
+.project-card h2 {
+  font-size: 20px;
+  color: #0078d7;
+  margin-bottom: 10px;
+}
+
+/* Project description text */
+.project-card p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: #333;
+}
+
+/* Project link buttons (GitHub / Live Demo) */
+.project-links a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: #0078d7;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+Hover effect on links
+.project-links a:hover {
+  background: #005bb5;
+}
+
+.projects-subtitle {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #222;           /* darker shade than #444 */
+  font-weight: 500;      /* make text a bit bolder */
+}
+.projects-subtitle {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #111;           /* almost black */
+  font-weight: 600;      /* medium-bold */
+  letter-spacing: 0.5px; /* slight spacing for clarity */
+}
+
+.role {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #0078d7;
+}
+/* ========================= ABOUT / HOME ========================= */
+/* Skills Section */
+.skills-section {
+  margin-top: 30px;
+}
+
+.skills-title {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #0078d7;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills-list span {
+  background: #e6f2ff;
+  color: #0078d7;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.skills-list span:hover {
+  background: #0078d7;
+  color: white;
+  transform: translateY(-2px);
+}
+/*  THIS FOR CONTACT PAGE */
+.contact-note {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+}
+/* =========================
+   CONTACT PAGE - MOBILE FIX
+========================= */
+@media (max-width: 768px) {
+
+  #contact {
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+
+  .contact-title {
+    font-size: 26px;
+  }
+
+  .contact-subtitle,
+  .contact-note {
+    font-size: 15px;
+  }
+
+  .contact-card {
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%;
+    min-width: unset;
+    text-align: center;
+  }
+
+  .contact-info p {
+    font-size: 15px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .contact-form button {
+    width: 100%;
+    padding: 12px;
+  }
+}

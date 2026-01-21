@@ -1,126 +1,156 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Akash Deep | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akash Deep | Software Developer Portfolio</title>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const menuToggle = document.getElementById('menu-toggle');
-  const navLinks = document.getElementById('nav-links');
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Akash Deep - Software Developer specializing in Machine Learning, Data Science, and Web Technologies. View my projects and get in touch."
+    />
+    <meta
+      name="keywords"
+      content="Software Developer, Machine Learning, Data Science, Python, Portfolio"
+    />
+    <meta name="author" content="Akash Deep" />
 
-  if (!menuToggle || !navLinks) return; // defensive - won't throw
+    <!-- Modern Font - Inter from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  menuToggle.addEventListener('click', function (e) {
-    const isOpen = navLinks.classList.toggle('show');
-    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  // Close menu when any nav link is clicked (useful on mobile)
-  navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      if (navLinks.classList.contains('show')) {
-        navLinks.classList.remove('show');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      }
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+
+      if (!menuToggle || !navLinks) return; // defensive - won't throw
+
+      menuToggle.addEventListener("click", function (e) {
+        const isOpen = navLinks.classList.toggle("show");
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      // Close menu when any nav link is clicked (useful on mobile)
+      navLinks.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", () => {
+          if (navLinks.classList.contains("show")) {
+            navLinks.classList.remove("show");
+            menuToggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      });
+
+      // Close when clicking outside the menu
+      document.addEventListener("click", function (e) {
+        if (
+          navLinks.classList.contains("show") &&
+          !navLinks.contains(e.target) &&
+          e.target !== menuToggle
+        ) {
+          navLinks.classList.remove("show");
+          menuToggle.setAttribute("aria-expanded", "false");
+        }
+      });
     });
-  });
+  </script>
 
-  // Close when clicking outside the menu
-  document.addEventListener('click', function (e) {
-    if (navLinks.classList.contains('show') &&
-        !navLinks.contains(e.target) &&
-        e.target !== menuToggle) {
-      navLinks.classList.remove('show');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    }
-  });
-});
-</script>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="nav-inner">
+        <button
+          id="menu-toggle"
+          class="menu-toggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
 
-
-<body>
-
- <!-- Navbar -->
-<nav>
-  <div class="nav-inner">
-    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-
-    <div class="nav-links" id="nav-links" role="navigation" aria-label="Main Navigation">
-      <a href="index.html" aria-current="page">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="resume.html">Resume</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </div>
-</nav>
-
-  <!-- About Section (Home) -->
-  <section id="about">
-    <div class="about-container">
-      <!-- Profile Pic -->
-      <div class="profile-pic">
-        <img src="Akash-passport-image.png" alt="Akash Deep">
+        <div
+          class="nav-links"
+          id="nav-links"
+          role="navigation"
+          aria-label="Main Navigation"
+        >
+          <a href="index.html" aria-current="page">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="resume.html">Resume</a>
+          <a href="contact.html">Contact</a>
+        </div>
       </div>
+    </nav>
 
-      <!-- Intro -->
-    <div class="intro">
-      <h2>Hi, I'm <span>Akash 👋</span></h2>
+    <!-- About Section (Hero) -->
+    <section id="about">
+      <div class="about-container">
+        <!-- Profile Picture with Animated Border -->
+        <div class="profile-pic">
+          <img
+            src="Akash-passport-image.png"
+            alt="Akash Deep - Software Developer"
+          />
+        </div>
 
-      <h3 class="role">
-      Software Developer | ML & Data Science Enthusiast
-    </h3>
+        <!-- Hero Content -->
+        <div class="intro">
+          <h2>Hi, I'm <span>Akash Deep</span> 👋</h2>
 
-    <p>
-      I build practical, real-world projects using
-      <b>Python, Machine Learning, and Web Technologies</b>.
-    </p>
+          <h3 class="role">
+            Software Developer | ML & Data Science Enthusiast
+          </h3>
 
-    <p>
-      Currently focused on <b>Data Science, Explainable AI (XAI)</b>,
-      and applying ML models to solve real problems.
-    </p>
+          <p>
+            I build practical, real-world projects using
+            <b>Python, Machine Learning, and Web Technologies</b>.
+          </p>
 
-    <a href="projects.html" class="btn">See My Projects 🚀</a>
-    </div>
+          <p>
+            Currently focused on <b>Data Science, Explainable AI (XAI)</b>, and
+            applying ML models to solve real problems.
+          </p>
 
-    <!-- Skills Section -->
-    <div class="skills-section">
-      <h3 class="skills-title">Core Skills</h3>
+          <a href="projects.html" class="btn">Explore My Work →</a>
 
-      <div class="skills-list">
-        <span>Python</span>
-        <span>Machine Learning</span>
-        <span>Data Science</span>
-        <span>Explainable AI (SHAP)</span>
-        <span>C / C++</span>
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Flask</span>
-        <span>GitHub</span>
+          <!-- Skills Section - Modern Tags -->
+          <div class="skills-section">
+            <h3 class="skills-title">Core Skills</h3>
+            <div class="skills-list">
+              <span>Python</span>
+              <span>Machine Learning</span>
+              <span>Data Science</span>
+              <span>Explainable AI (SHAP)</span>
+              <span>C / C++</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Flask</span>
+              <span>GitHub</span>
+            </div>
+          </div>
+
+          <!-- Availability Status Badge -->
+          <p class="availability">
+            🎯 Actively seeking internships and entry-level roles in
+            <b>Machine Learning / Data Science</b>
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <p class="availability">
-    🎯 Actively seeking internships and entry-level roles in
-    <b>Machine Learning / Data Science</b>
-    </p>
-
-
-
-
-    <!-- Professional Tagline -->
-    
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>Built with HTML, CSS & JavaScript | © 2025 Akash Deep</p>
-  </footer>
-
-</body>
+    <!-- Footer -->
+    <footer>
+      <p>Designed & Built by Akash Deep | © 2025</p>
+    </footer>
+  </body>
 </html>

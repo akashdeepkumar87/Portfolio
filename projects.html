@@ -1,147 +1,174 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Akash Deep | Projects</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Akash Deep</title>
 
-  <!-- ================= NAVBAR ================= -->
-  <nav>
-    <div class="nav-inner">
-      <!-- Hamburger button (mobile only) -->
-      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-      
-      <!-- Navigation links -->
-      <div class="nav-links" id="nav-links">
-        <a href="index.html">About</a>
-        <a href="projects.html" aria-current="page">Projects</a>
-        <a href="resume.html">Resume</a>
-        <a href="contact.html">Contact</a>
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Explore Akash Deep's portfolio of Machine Learning, Data Science, and Web Development projects."
+    />
+
+    <!-- Modern Font - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <nav>
+      <div class="nav-inner">
+        <!-- Hamburger button (mobile only) -->
+        <button
+          id="menu-toggle"
+          class="menu-toggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+        <!-- Navigation links -->
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">About</a>
+          <a href="projects.html" aria-current="page">Projects</a>
+          <a href="resume.html">Resume</a>
+          <a href="contact.html">Contact</a>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- ================= PROJECTS SECTION ================= -->
-  <main id="projects">
-    <h1 class="projects-title">My Projects</h1>
-   <p class="projects-subtitle">
-  A selection of my projects that demonstrate my technical skills, creativity, and problem-solving approach.
-  </p>
+    <!-- ================= PROJECTS SECTION ================= -->
+    <main id="projects">
+      <h1 class="projects-title">My Projects</h1>
+      <p class="projects-subtitle">
+        A selection of projects that demonstrate my technical skills,
+        creativity, and problem-solving approach.
+      </p>
 
       <!-- Grid container for project cards -->
       <div class="projects-grid">
+        <!-- Project 1: Lymphography - Featured Project -->
+        <div class="project-card highlight">
+          <h2>🩺 Lymphography Disease Prediction (Explainable AI)</h2>
 
-        <div class="projects-grid">
+          <p>
+            <b>Problem:</b> Medical diagnosis using lymphography data is complex
+            and traditional ML models lack interpretability.
+          </p>
 
-    <!-- Project 1: Lymphography -->
-    <div class="project-card highlight">
-      <h2>🩺 Lymphography Disease Prediction (Explainable AI)</h2>
+          <p>
+            <b>Solution:</b> Developed and evaluated multiple classification
+            models (KNN, Decision Tree, Random Forest) and applied
+            <b>SHAP (Explainable AI)</b> to interpret feature importance.
+          </p>
 
-      <p>
-        <b>Problem:</b> Medical diagnosis using lymphography data is complex
-        and traditional ML models lack interpretability.
-      </p>
+          <p>
+            <b>Impact:</b> Improved transparency and trust in medical
+            predictions, making the system suitable for research and academic
+            use.
+          </p>
 
-      <p>
-        <b>Solution:</b> Developed and evaluated multiple classification models
-        (KNN, Decision Tree, Random Forest) and applied
-        <b>SHAP (Explainable AI)</b> to interpret feature importance.
-      </p>
+          <p><strong>Tech Stack:</strong> Python, Scikit-learn, SHAP</p>
 
-      <p>
-        <b>Impact:</b> Improved transparency and trust in medical predictions,
-        making the system suitable for research and academic use.
-      </p>
+          <div class="project-links">
+            <a
+              href="https://github.com/ad8034/Lymphography-XAI-Project"
+              target="_blank"
+            >
+              <i class="fa-brands fa-github"></i> View on GitHub
+            </a>
+          </div>
+        </div>
 
-      <p>
-        <strong>Tech Stack:</strong> Python, Scikit-learn, SHAP
-      </p>
+        <!-- Project 2: Daily Sugar Guidance App -->
+        <div class="project-card">
+          <h2>🩸 Daily Sugar Guidance Web Application</h2>
 
-      <div class="project-links">
-        <a href="https://github.com/ad8034/Lymphography-XAI-Project" target="_blank">
-        GitHub Repository
-        </a>
+          <p>
+            <b>Problem:</b> People with diabetes often struggle to understand
+            daily blood sugar readings and required lifestyle actions.
+          </p>
+
+          <p>
+            <b>Solution:</b> Built and deployed a Streamlit-based web
+            application that provides daily diet and walking guidance based on
+            blood sugar values, including safe input validation and emergency
+            handling.
+          </p>
+
+          <p>
+            <b>Impact:</b> Created an accessible and easy-to-use tool suitable
+            for both literate and low-literacy users.
+          </p>
+
+          <p>
+            <strong>Tech Stack:</strong> Python, Streamlit, GitHub, Streamlit
+            Cloud
+          </p>
+
+          <div class="project-links">
+            <a href="https://trackdiabities.streamlit.app" target="_blank">
+              <i class="fa-solid fa-external-link"></i> Live Demo
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
 
-    <!-- Project 2: Daily Sugar Guidance App -->
-    <div class="project-card">
-      <h2>🩸 Daily Sugar Guidance Web Application</h2>
+    <!-- ================= FOOTER ================= -->
+    <footer>
+      <p>Designed & Built by Akash Deep | © 2025</p>
+    </footer>
 
-      <p>
-        <b>Problem:</b> People with diabetes often struggle to understand
-        daily blood sugar readings and required lifestyle actions.
-      </p>
+    <!-- ================= NAVBAR TOGGLE SCRIPT ================= -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.getElementById("menu-toggle");
+        const navLinks = document.getElementById("nav-links");
 
-      <p>
-        <b>Solution:</b> Built and deployed a Streamlit-based web application
-        that provides daily diet and walking guidance based on blood sugar values,
-        including safe input validation and emergency handling.
-      </p>
-
-      <p>
-        <b>Impact:</b> Created an accessible and easy-to-use tool suitable
-        for both literate and low-literacy users.
-      </p>
-
-      <p>
-        <strong>Tech Stack:</strong> Python, Streamlit, GitHub, Streamlit Cloud
-      </p>
-
-      <div class="project-links">
-        <a href="https://trackdiabities.streamlit.app" target="_blank">
-          Live Application
-        </a>
-      </div>
-    </div>
-
-  </div>
-
-  </main>
-
-  <!-- ================= FOOTER ================= -->
-  <footer>
-    <p>Built with HTML, CSS & JavaScript | © 2025 Akash Deep</p>
-  </footer>
-
-  <!-- ================= NAVBAR TOGGLE SCRIPT ================= -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const menuToggle = document.getElementById('menu-toggle');
-      const navLinks = document.getElementById('nav-links');
-
-      if (menuToggle && navLinks) {
-        // Toggle nav menu on hamburger click
-        menuToggle.addEventListener('click', () => {
-          const isOpen = navLinks.classList.toggle('show');
-          menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        });
-
-        // Close nav when clicking a link
-        navLinks.querySelectorAll('a').forEach(a => {
-          a.addEventListener('click', () => {
-            navLinks.classList.remove('show');
-            menuToggle.setAttribute('aria-expanded', 'false');
+        if (menuToggle && navLinks) {
+          // Toggle nav menu on hamburger click
+          menuToggle.addEventListener("click", () => {
+            const isOpen = navLinks.classList.toggle("show");
+            menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
           });
-        });
 
-        // Close nav when clicking outside
-        document.addEventListener('click', (e) => {
-          if (navLinks.classList.contains('show') &&
+          // Close nav when clicking a link
+          navLinks.querySelectorAll("a").forEach((a) => {
+            a.addEventListener("click", () => {
+              navLinks.classList.remove("show");
+              menuToggle.setAttribute("aria-expanded", "false");
+            });
+          });
+
+          // Close nav when clicking outside
+          document.addEventListener("click", (e) => {
+            if (
+              navLinks.classList.contains("show") &&
               !navLinks.contains(e.target) &&
-              e.target !== menuToggle) {
-            navLinks.classList.remove('show');
-            menuToggle.setAttribute('aria-expanded', 'false');
-          }
-        });
-      }
-    });
-  </script>
-
-</body>
+              e.target !== menuToggle
+            ) {
+              navLinks.classList.remove("show");
+              menuToggle.setAttribute("aria-expanded", "false");
+            }
+          });
+        }
+      });
+    </script>
+  </body>
 </html>
