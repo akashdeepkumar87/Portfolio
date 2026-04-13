@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resume | Akash Deep</title>
+    <title>Resume | AI Workflow & Visual Data Design</title>
 
     <!-- SEO Meta Tags -->
     <meta
       name="description"
-      content="View and download Akash Deep's professional resume - Software Developer specializing in ML & Data Science."
+      content="View and download Akash Deep's resume tailored for Infographics & Visual Data Design Intern (AI Workflows)."
     />
 
     <!-- Modern Font - Inter -->
@@ -53,43 +53,84 @@
       <!-- Header -->
       <section class="resume-header">
         <h1>Akash Deep Kumar</h1>
-        <p class="resume-tagline"><span>🎬 Video Resume</span></p>
+        <p class="resume-tagline">
+          <span>AI + Visual Data Design Profile</span>
+        </p>
+        <p class="resume-intro">
+          Student candidate focused on clear information design, practical AI
+          workflow support, and beginner-friendly data storytelling.
+        </p>
       </section>
 
-      <!-- Video Resume -->
-      <section class="resume-video-section">
-        <div class="video-box">
-          <video id="resume-video" preload="metadata">
-            <source src="" type="video/mp4" />
-          </video>
-          <div class="play-overlay" id="play-overlay">▶</div>
-        </div>
+      <section class="resume-snapshot" aria-label="Internship Snapshot">
+        <article class="snapshot-card">
+          <h3>Internship Goal</h3>
+          <p>
+            Support AI workflow teams by combining data checks, evaluation
+            support, and clear infographic-style communication.
+          </p>
+        </article>
+
+        <article class="snapshot-card">
+          <h3>What I Can Deliver</h3>
+          <p>
+            Structured visual summaries, readable project breakdowns, and
+            beginner-friendly explanations of model outputs.
+          </p>
+        </article>
+
+        <article class="snapshot-card">
+          <h3>Work Style</h3>
+          <p>
+            Organized, detail-focused, and open to feedback with a habit of
+            improving drafts based on data and reviewer input.
+          </p>
+        </article>
       </section>
+
       <!-- Resume Highlights -->
       <section class="resume-highlights">
         <div class="highlight-card">
-          <h3>🧠 Core Strength</h3>
+          <h3>AI & Data Visualization Focus</h3>
           <p>
-            Strong foundation in Machine Learning, Python, and Explainable AI
-            (SHAP), with focus on real-world, interpretable solutions.
+            Build visuals that explain AI outputs clearly, including model
+            behavior, feature impact, and evaluation summaries for non-expert
+            audiences.
           </p>
         </div>
 
         <div class="highlight-card">
-          <h3>🩺 Key Project</h3>
+          <h3>Design Thinking Approach</h3>
           <p>
-            Built and explained ML models for medical diagnosis using
-            lymphography data, including research-level evaluation and
-            SHAP-based interpretation.
+            Start from audience needs, define one clear message, organize
+            content blocks, then apply visual hierarchy, contrast, and spacing
+            for fast reading.
           </p>
         </div>
 
         <div class="highlight-card">
-          <h3>🌐 Deployment</h3>
+          <h3>How I Work with Data</h3>
           <p>
-            Developed and deployed a Streamlit web application providing daily
-            sugar guidance with safe input handling and accessibility in mind.
+            Collect, clean, and validate data, check edge cases, summarize
+            findings, and convert analysis into structured charts and insight
+            callouts.
           </p>
+        </div>
+      </section>
+
+      <section class="resume-tools">
+        <h2>Tools & Skills</h2>
+        <div class="skills-list">
+          <span>Canva</span>
+          <span>Figma</span>
+          <span>Python</span>
+          <span>Matplotlib</span>
+          <span>Excel / Google Sheets</span>
+          <span>Data Annotation</span>
+          <span>Model Evaluation</span>
+          <span>RLHF and SFT Fundamentals</span>
+          <span>SHAP / Explainable AI</span>
+          <span>HTML / CSS</span>
         </div>
       </section>
 
@@ -119,8 +160,6 @@
       document.addEventListener("DOMContentLoaded", function () {
         const menuToggle = document.getElementById("menu-toggle");
         const navLinks = document.getElementById("nav-links");
-        const video = document.getElementById("resume-video");
-        const playOverlay = document.getElementById("play-overlay");
 
         // Navbar toggle
         if (menuToggle && navLinks) {
@@ -145,21 +184,6 @@
             }
           });
         }
-
-        // Video play/pause with overlay
-        video.controls = false;
-        video.addEventListener("click", () => {
-          if (video.paused) {
-            video.play();
-            playOverlay.style.display = "none";
-          } else {
-            video.pause();
-            playOverlay.style.display = "flex";
-          }
-        });
-        video.addEventListener("ended", () => {
-          playOverlay.style.display = "flex";
-        });
       });
     </script>
   </body>
