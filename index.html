@@ -25,8 +25,44 @@
     />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="./style.css?v=20260414" />
+    <link rel="stylesheet" href="style.css" />
   </head>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+
+      if (!menuToggle || !navLinks) return; // defensive - won't throw
+
+      menuToggle.addEventListener("click", function (e) {
+        const isOpen = navLinks.classList.toggle("show");
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      // Close menu when any nav link is clicked (useful on mobile)
+      navLinks.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", () => {
+          if (navLinks.classList.contains("show")) {
+            navLinks.classList.remove("show");
+            menuToggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      });
+
+      // Close when clicking outside the menu
+      document.addEventListener("click", function (e) {
+        if (
+          navLinks.classList.contains("show") &&
+          !navLinks.contains(e.target) &&
+          e.target !== menuToggle
+        ) {
+          navLinks.classList.remove("show");
+          menuToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+  </script>
 
   <body>
     <!-- Navbar -->
@@ -47,10 +83,10 @@
           role="navigation"
           aria-label="Main Navigation"
         >
-          <a href="./index.html" aria-current="page">About</a>
-          <a href="./projects.html">Projects</a>
-          <a href="./resume.html">Resume</a>
-          <a href="./contact.html">Contact</a>
+          <a href="index.html" aria-current="page">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="resume.html">Resume</a>
+          <a href="contact.html">Contact</a>
         </div>
       </div>
     </nav>
@@ -61,14 +97,14 @@
         <!-- Profile Picture with Animated Border -->
         <div class="profile-pic">
           <img
-            src="./Akash-passport-image.png"
+            src="Akash-passport-image.png"
             alt="Akash Deep - AI and Visual Data Design Portfolio"
           />
         </div>
 
         <!-- Hero Content -->
         <div class="intro">
-          <h2>Hi, I'm <span>Akash Deep</span> 👋</h2>
+          <h2>Hi, I'm <span>Akash Deep</span> </h2>
 
           <p>
             I am a student building practical projects with
@@ -81,13 +117,11 @@
             <b>clear visual stories</b>.
           </p>
 
-          <a href="./projects.html" class="btn"
-            >Explore Data Story Projects →</a
-          >
+          <a href="projects.html" class="btn">Explore Data Story Projects →</a>
 
           <!-- Availability Status Badge -->
           <p class="availability">
-            🎯 Actively seeking internships and entry-level roles in
+             Actively seeking internships and entry-level roles in
             <b>Infographics, Visual Data Design, and AI Workflows</b>
           </p>
         </div>
@@ -162,41 +196,5 @@
     <footer>
       <p>Designed & Built by Akash Deep | © 2025</p>
     </footer>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const menuToggle = document.getElementById("menu-toggle");
-        const navLinks = document.getElementById("nav-links");
-
-        if (!menuToggle || !navLinks) return; // defensive - won't throw
-
-        menuToggle.addEventListener("click", function () {
-          const isOpen = navLinks.classList.toggle("show");
-          menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        });
-
-        // Close menu when any nav link is clicked (useful on mobile)
-        navLinks.querySelectorAll("a").forEach((a) => {
-          a.addEventListener("click", () => {
-            if (navLinks.classList.contains("show")) {
-              navLinks.classList.remove("show");
-              menuToggle.setAttribute("aria-expanded", "false");
-            }
-          });
-        });
-
-        // Close when clicking outside the menu
-        document.addEventListener("click", function (e) {
-          if (
-            navLinks.classList.contains("show") &&
-            !navLinks.contains(e.target) &&
-            e.target !== menuToggle
-          ) {
-            navLinks.classList.remove("show");
-            menuToggle.setAttribute("aria-expanded", "false");
-          }
-        });
-      });
-    </script>
   </body>
 </html>
