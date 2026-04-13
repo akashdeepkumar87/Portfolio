@@ -99,6 +99,14 @@ html {
   font-size: 16px;
 }
 
+/* Prevent overflow/layout shifts from media across environments */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 body {
   font-family: var(--font-main);
   background: var(--bg-primary);
