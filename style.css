@@ -1170,6 +1170,30 @@ nav.scrolled {
   margin-top: var(--spacing-sm);
 }
 
+.contact-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.form-status {
+  min-height: 1.3rem;
+  margin-top: 0.1rem;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.form-status.pending {
+  color: var(--accent-cyan);
+}
+
+.form-status.success {
+  color: var(--accent-emerald);
+}
+
+.form-status.error {
+  color: #fca5a5;
+}
+
 /* ============================================
    11. FOOTER
    ============================================ */

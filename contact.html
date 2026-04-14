@@ -100,6 +100,7 @@
             required
           ></textarea>
           <button type="submit" class="btn">Send Message</button>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </main>
@@ -113,27 +114,65 @@
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <script>
       (function () {
-        // ✅ Replace with your own Public Key
+        if (!window.emailjs) return;
         emailjs.init("KjPpqlN149YKIl653");
       })();
 
-      // Handle form submission
-      document
-        .getElementById("contact-form")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
+      const contactForm = document.getElementById("contact-form");
+      const formStatus = document.getElementById("form-status");
+      const submitButton = contactForm.querySelector('button[type="submit"]');
 
-          // ✅ Replace with your Service ID & Template ID
-          emailjs.sendForm("service_kg40cql", "template_u0mb27q", this).then(
-            function () {
-              alert("✅ Message sent successfully!");
-              document.getElementById("contact-form").reset(); // clear form after sending
-            },
-            function (error) {
-              alert("❌ Failed to send message: " + JSON.stringify(error));
-            },
+      function setFormStatus(message, statusType) {
+        formStatus.textContent = message;
+        formStatus.className = "form-status " + statusType;
+      }
+
+      // Handle form submission
+      contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        if (!window.emailjs) {
+          setFormStatus(
+            "Email service is unavailable right now. Please email me at ad046785@gmail.com.",
+            "error",
           );
-        });
+          return;
+        }
+
+        const originalButtonText = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+        setFormStatus("Sending your message...", "pending");
+
+        emailjs.sendForm("service_kg40cql", "template_u0mb27q", contactForm).then(
+          function () {
+            setFormStatus("Message sent successfully. Thank you!", "success");
+            contactForm.reset();
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+          },
+          function (error) {
+            const errorText =
+              (error && (error.text || error.message)) || "Unknown error";
+
+            if (/invalid grant|gmail_api/i.test(errorText)) {
+              setFormStatus(
+                "Email service is temporarily unavailable. Please email me directly at ad046785@gmail.com while I reconnect the mailbox.",
+                "error",
+              );
+            } else {
+              setFormStatus(
+                "Could not send your message right now. Please try again or email me at ad046785@gmail.com.",
+                "error",
+              );
+            }
+
+            console.error("EmailJS send failed:", error);
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+          },
+        );
+      });
 
       // Navbar toggle (mobile)
       document.addEventListener("DOMContentLoaded", function () {
