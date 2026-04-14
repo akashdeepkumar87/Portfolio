@@ -100,7 +100,12 @@
             required
           ></textarea>
           <button type="submit" class="btn">Send Message</button>
-          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+          <p
+            id="form-status"
+            class="form-status"
+            role="status"
+            aria-live="polite"
+          ></p>
         </form>
       </div>
     </main>
@@ -144,34 +149,36 @@
         submitButton.textContent = "Sending...";
         setFormStatus("Sending your message...", "pending");
 
-        emailjs.sendForm("service_kg40cql", "template_u0mb27q", contactForm).then(
-          function () {
-            setFormStatus("Message sent successfully. Thank you!", "success");
-            contactForm.reset();
-            submitButton.disabled = false;
-            submitButton.textContent = originalButtonText;
-          },
-          function (error) {
-            const errorText =
-              (error && (error.text || error.message)) || "Unknown error";
+        emailjs
+          .sendForm("service_kg40cql", "template_u0mb27q", contactForm)
+          .then(
+            function () {
+              setFormStatus("Message sent successfully. Thank you!", "success");
+              contactForm.reset();
+              submitButton.disabled = false;
+              submitButton.textContent = originalButtonText;
+            },
+            function (error) {
+              const errorText =
+                (error && (error.text || error.message)) || "Unknown error";
 
-            if (/invalid grant|gmail_api/i.test(errorText)) {
-              setFormStatus(
-                "Email service is temporarily unavailable. Please email me directly at ad046785@gmail.com while I reconnect the mailbox.",
-                "error",
-              );
-            } else {
-              setFormStatus(
-                "Could not send your message right now. Please try again or email me at ad046785@gmail.com.",
-                "error",
-              );
-            }
+              if (/invalid grant|gmail_api/i.test(errorText)) {
+                setFormStatus(
+                  "Email service is temporarily unavailable. Please email me directly at ad046785@gmail.com while I reconnect the mailbox.",
+                  "error",
+                );
+              } else {
+                setFormStatus(
+                  "Could not send your message right now. Please try again or email me at ad046785@gmail.com.",
+                  "error",
+                );
+              }
 
-            console.error("EmailJS send failed:", error);
-            submitButton.disabled = false;
-            submitButton.textContent = originalButtonText;
-          },
-        );
+              console.error("EmailJS send failed:", error);
+              submitButton.disabled = false;
+              submitButton.textContent = originalButtonText;
+            },
+          );
       });
 
       // Navbar toggle (mobile)
